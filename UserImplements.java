@@ -15,6 +15,8 @@ public class UserImplements implements IUser {
 	Scanner fNameInput = new Scanner(System.in);
 	Scanner lNameInput = new Scanner(System.in);
 	Scanner emailInput = new Scanner(System.in);
+	Scanner mobileInput = new Scanner(System.in);
+
 
 	// UC1 - First name starts with caps and has minimum 3 characters.
 	public void validateFirstName() {
@@ -63,6 +65,21 @@ public class UserImplements implements IUser {
 				System.out.println("Email: " + email + " is valid.");
 			} else {
 				System.out.println("Email: " + email + " is invalid.");
+			}
+
+		}
+		
+		// UC4 - Need to validate mobile number example: 91 9919819801.
+		public void validateMobileNumber() {
+			System.out.println("Enter mobile no: ");
+			String mobile = mobileInput.nextLine();
+
+			String regex = "^(91[ ])?[6-9]\\d{9}$";
+			Pattern pattern = Pattern.compile(regex);
+			if (pattern.matcher(mobile).matches()) {
+				System.out.println("Mobile No: " + mobile + " is valid.");
+			} else {
+				System.out.println("Mobile No: " + mobile + " is invalid.");
 			}
 
 		}
