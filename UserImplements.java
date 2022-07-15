@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
  *
  */
 public class UserImplements implements IUser {
+	
+	Scanner fNameInput = new Scanner(System.in);
+	Scanner lNameInput = new Scanner(System.in);
+	Scanner emailInput = new Scanner(System.in);
 
 	// UC1 - First name starts with caps and has minimum 3 characters.
 	public void validateFirstName() {
@@ -44,6 +48,21 @@ public class UserImplements implements IUser {
 				System.out.println("Last name: " + lName + " is valid.");
 			} else {
 				System.out.println("Last name: " + lName + " is invalid.");
+			}
+
+		}	
+		
+		// UC3 - Need to validate email.
+		public void validateEmail() {
+			System.out.println("Enter email: ");
+			String email = emailInput.nextLine();
+
+			String regex = "^[a-z0-9]{1,20}([_.+-][a-z0-9]+)?@[a-z0-9]+.[a-z]{2,3}(.[a-z]{2})?$";
+			Pattern pattern = Pattern.compile(regex);
+			if (pattern.matcher(email).matches()) {
+				System.out.println("Email: " + email + " is valid.");
+			} else {
+				System.out.println("Email: " + email + " is invalid.");
 			}
 
 		}

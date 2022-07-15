@@ -32,12 +32,26 @@ public class UserRegistrationTest {
 		public void validateLastNameTest() {
 			String regex = "^[A-Z][a-zA-Z]{2,}$";
 			Pattern pattern = Pattern.compile(regex);
-			String lName = "Ashok";
+			String lName = "Mulla";
 
 			if (pattern.matcher(lName).matches()) {
 				System.out.println("Last name: " + lName + " is valid.");
 			} else {
 				System.out.println("Last name: " + lName + " is invalid.");
+			}
+
+		}
+		// UC3 - validate email
+		@Test
+		public void validateEmailTest() {
+			String regex = "^[a-z0-9]{1,20}([_.+-][a-z0-9]+)?@[a-z0-9]+.[a-z]{2,3}(.[a-z]{2})?$";
+			Pattern pattern = Pattern.compile(regex);
+			String email = "mdafroz.gm@gmail.com";
+
+			if (pattern.matcher(email).matches()) {
+				System.out.println("Email: " + email + " is valid.");
+			} else {
+				System.out.println("Email: " + email + " is invalid.");
 			}
 
 		}
