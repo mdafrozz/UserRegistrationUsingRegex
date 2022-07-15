@@ -13,5 +13,6 @@ public interface IUser {
 	public void validateLastName();
 	public void validateEmail();
 	public void validateMobileNumber();
+	public void validatePassword();
 
 }
