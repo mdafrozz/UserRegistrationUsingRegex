@@ -20,5 +20,7 @@ public class UserRegistration {
 		System.out.println("<--------------------------------------->");
 		user.validateMobileNumber();
 		System.out.println("<--------------------------------------->");
+		user.validatePassword();
+		System.out.println("<--------------------------------------->");
 	}
 }

@@ -55,7 +55,7 @@ public class UserRegistrationTest {
 			}
 
 		}
-		// UC4 - Need to validate mobile number example: 91 9919819801.
+	// UC4 - Need to validate mobile number example: 91 9919819801,Country code follow by space and 10 digit number.
 		@Test
 		public void validateMobileNumberTest() {
 			String regex = "^(91[ ])?[6-9]\\d{9}$";
@@ -66,6 +66,20 @@ public class UserRegistrationTest {
 				System.out.println("Mobile No: " + mobile + " is valid.");
 			} else {
 				System.out.println("Mobile No: " + mobile + " is invalid.");
+			}
+
+		}
+		// UC5 - Password rule - 1: Minimum 8 characters
+		@Test
+		public void validatePasswordRule1() {
+			String regex = "^[a-zA-z0-9!@#$%^&*()?]{8}$";
+			Pattern pattern = Pattern.compile(regex);
+			String password = "afroz123";
+
+			if (pattern.matcher(password).matches()) {
+				System.out.println("Password: " + password + " is valid.");
+			} else {
+				System.out.println("Password: " + password + " is invalid.");
 			}
 
 		}
