@@ -84,13 +84,14 @@ public class UserImplements implements IUser {
 			}
 
 		}
-		
 		// UC5 - Password rule - 1: Minimum 8 characters
+		// UC6 - Password rule - 2: Starts with Upper case
 		public void validatePassword() {
 			System.out.println("Enter password: ");
 			String password = passwordInput.nextLine();
 
-			String regex = "^[a-zA-z0-9!@#$%^&*()?]{8,}$";
+			//String regex = "^[a-zA-z0-9!@#$%^&*()?]{8,}$"; // UC5
+			String regex = "(?=.*[A-Z])[a-zA-Z0-9@#$%^&*()]{8,}$"; // UC6
 			Pattern pattern = Pattern.compile(regex);
 			if (pattern.matcher(password).matches()) {
 				System.out.println("Password: " + password + " is valid.");
