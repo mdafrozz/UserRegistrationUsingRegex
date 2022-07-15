@@ -13,6 +13,8 @@ public class UserRegistration {
 		
 		UserImplements user = new UserImplements();
 		user.validateFirstName();
-
+		System.out.println("<--------------------------------------->");
+		user.validateLastName();
+		System.out.println("<--------------------------------------->");
 	}
 }
