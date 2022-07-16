@@ -32,7 +32,7 @@ public class UserRegistrationTest {
 		public void validateLastNameTest() {
 			String regex = "^[A-Z][a-zA-Z]{2,}$";
 			Pattern pattern = Pattern.compile(regex);
-			String lName = "Mulla";
+
 
 			if (pattern.matcher(lName).matches()) {
 				System.out.println("Last name: " + lName + " is valid.");
