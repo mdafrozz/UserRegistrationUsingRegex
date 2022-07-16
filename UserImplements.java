@@ -104,4 +104,14 @@ public class UserImplements implements IUser {
 			}
 
 		}
+		//UC9 -Should clear all email samples provided separately
+		public boolean clearAllEmailSamples(String parameters) {
+			String regex = "^[a-z0-9]{1,20}([_.+-][a-z0-9]+)?@[a-z0-9]+.[a-z]{2,3}(.[a-z]{2})?$";
+			Pattern pattern = Pattern.compile(regex);
+			if (pattern.matcher(parameters).matches()) {
+				return true;
+			}
+			return false;
+
+		}
 }
