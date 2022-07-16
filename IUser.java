@@ -11,5 +11,4 @@ public interface IUser {
 
 	public void validateFirstName();
 	public void validateLastName();
-	
 }
