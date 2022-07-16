@@ -14,5 +14,5 @@ public interface IUser {
 	public void validateEmail();
 	public void validateMobileNumber();
 	public void validatePassword();
-
+	public boolean clearAllEmailSamples(String parameters);
 }
